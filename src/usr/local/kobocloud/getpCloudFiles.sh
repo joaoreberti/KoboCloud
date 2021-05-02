@@ -21,7 +21,7 @@ do
   echo $fileid
   
   # get public ID
-  jsonAns=`$CURL -k -L --silent "https://api.pcloud.com/getpublinkdownload?code=$code&forcedownload=1&fileid=$fileid"`
+  jsonAns=`$CURL -k -L --silent "https://eapi.pcloud.com/getpublinkdownload?code=$code&forcedownload=1&fileid=$fileid"`
   #echo $jsonAns
   
   remotePath=`echo $jsonAns | sed -e 's/.*"path": "\([^"]*\)".*/\1/' -e 's@\\\\/@/@g'`
